@@ -1,4 +1,4 @@
-
+.DS_Store
 client/node_modules
 server/node_modules
 
@@ -10,5 +10,6 @@ client/build
 !**/.env*.example
 
 # ignore mongo data
-server/docker/mongo-data/*
+server/mongo-data/*
+
 
