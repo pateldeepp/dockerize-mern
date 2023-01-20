@@ -7,7 +7,7 @@ client/npm-debug.log*
 client/build
 
 **/.env*
-!**/.env*.example
+!**/.env*.example*
 
 # ignore mongo data
 server/mongo-data/*
