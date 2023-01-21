@@ -28,31 +28,28 @@ services:
       - express-react-mongo
     networks:
       - example-net
-      - internal-net
     ports:
       - '5000:5000'
     env_file:
-      - ./.env
+      - ./server/.env
   
   express-react-mongo:
     image: mongo:6.0.3
     container_name: express-react-mongo
     restart: unless-stopped
     ports:
-      - '27017'
+      - '27017:27017'
     environment:
       - MONGO_INITDB_DATABASE=usersDB
-      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
       - MONGO_INITDB_ROOT_PASSWORD=admin
     env_file:
-      - ./.env
+      - ./server/.env
     # volumes:
     #   - ./server/mongo-data:/data/db
     networks:
-      - internal-net
+      - example-net
 
 networks:
   example-net:
     name: example-net
-  internal-net: 
-    name: internal-net
